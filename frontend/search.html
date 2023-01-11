@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <form ng-submit="getData()">
+        <div class="mb-3 mt-4">
+            <label for="delete" class="form-label" style="margin-left: 16%;">Select Department</label>
+            <select class="form-select form-select-lg" ng-model="department" id="" required ng-change="getData()" style="width: 70%; margin-left: 15%;">
+                <option selected disabled value="">Select one</option>
+                <option value="Testing">Testing</option>
+                <option value="Deployment">Deployment</option>
+                <option value="Customer Satisfaction">Customer Satisfaction</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Search" class="btn btn-info" style="background-color: grey;"/>
+        </div>
+        </form>
+        <section id="tableSection" class="container mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr >
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.designation}}</td>
+                        <td>{{data.department}}</td>
+                        <td>{{data.salary}}</td>
+                        <td>{{data.location}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div>
+        <form ng-submit="getData2()">
+        <div class="mb-3 mt-4">
+            <label for="delete" class="form-label" style="margin-left: 16%;">Select Salary</label>
+            <input type="number" class="form-select form-select-lg" ng-model="salary" id="" required ng-change="getData2()" style="width: 70%; margin-left: 15%;">
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Search" class="btn btn-info" style="background-color: grey;"/>
+        </div>
+        </form>
+        <section id="tableSection" class="container mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr >
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.designation}}</td>
+                        <td>{{data.department}}</td>
+                        <td>{{data.salary}}</td>
+                        <td>{{data.location}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>
